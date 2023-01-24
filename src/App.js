@@ -4,63 +4,48 @@ import './App.css';
 import './static/css/style.scss'
 
 function App() {
-  const [studentDetail, setStudentDetail] = useState( [{
-    rollNo:123456,
-    userName:"Rajappa"
-},
-{
-    rollNo:123457,
-    userName:"Siva"
-},
-{
-    rollNo:123456,
-    userName:"Raja"
-},
-{
-    rollNo:123458,
-    userName:"Sasi"
-},
-{
-  rollNo:123457,
-  userName:"Siva"
-},
-{
-  rollNo:123456,
-  userName:"Raja"
-},
-{
-  rollNo:123458,
-  userName:"Sasi"
-},])
+  const [studentAllList, setStudentAllList] = useState([])
+  const [studentDetail, setStudentDetail] = useState({})
+  const handleChange=(e)=>{
+    setStudentDetail({...studentDetail,[e.target.name]:e.target.value})
+  }
   const getStudentDetail=(e)=>{
     e.preventDefault()
+    setStudentAllList([...studentAllList,{...studentDetail}])
+    studentDetail.rollNo=""
+    studentDetail.userName=""
+    console.log(studentAllList)
   }
 
   return (
     <div className="App">
-      <form className='form_tag'>
+      <form className='form_tag' onSubmit={getStudentDetail} >
         <h2>Student Detail</h2>
         <label className='rollNo_label'>
           <input type="text"
             placeholder='Enter Student Roll No' 
             name="rollNo"
+            onChange={handleChange}
             value={studentDetail.rollNo} 
             ></input>
         </label>
         <label className='userename'>
+
           <input type="text"  
             placeholder='Enter Student User Name'  
-            name="username"
-            value={studentDetail.useName}></input>
+            name="userName"
+            value={studentDetail.userName}
+            onChange={handleChange}
+            ></input>
         </label>
           <button  type='submit' 
           className='submit_btn'
-            onChange={(e)=>{setStudentDetail(e.target.value)}}
-            onClick={getStudentDetail}
             >submit
           </button>
       </form>
+      {studentAllList.length > 0 ?
       <div className='table_list'>
+      
       <table>
         <thead>
           <tr>
@@ -69,15 +54,15 @@ function App() {
           </tr>
         </thead>
         <tbody>
-            {studentDetail.map(item => {
+            {studentAllList.map(item => {
                 return(<tr><td>{item.rollNo}</td>
                 <td>{item.userName}</td></tr>
                 )
               }
               )}
         </tbody>
-        </table>
-      </div>
+        </table> 
+      </div>:""}
     </div>
   );
 }
