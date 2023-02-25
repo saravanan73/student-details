@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+* body {
+  background-color: gray;
+}
+* body .App {
+  display: flex;
+  justify-content: center;
+  margin: 100px;
+  position: relative;
+}
+* body .App .form_tag {
+  display: flex;
+  background-color: rgb(101, 132, 132);
+  flex-direction: column;
+  position: absolute;
+  width: 450px;
+  height: auto;
+  border: 3px solid rgb(144, 239, 62);
+  border-radius: 10px;
+  padding: 20px;
+}
+* body .App .form_tag h2 {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  color: rgb(255, 38, 0);
+}
+* body .App .form_tag label {
+  position: relative;
+  margin-bottom: 15px;
+}
+* body .App .form_tag label input {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: medium;
+  border-radius: 10px;
+  outline: none;
+}
+* body .App .form_tag label input:focus {
+  border: 3px solid rgb(106, 0, 235);
+}
+* body .App .form_tag .submit_btn {
+  margin-left: 23%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: 50%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: medium;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  outline: none;
+}
+* body .App .form_tag .submit_btn:hover {
+  cursor: pointer;
+  background-color: green;
+}
+* body .App .form_tag .submit_btn:active {
+  color: rgb(3, 25, 57);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+* body .App .table_list {
+  display: flex;
+  margin: 350px;
+  background-color: rgb(101, 132, 132);
+  flex-direction: column;
+  position: absolute;
+  width: 450px;
+  height: auto;
+  border: 3px solid rgb(144, 239, 62);
+  border-radius: 10px;
+  padding: 20px;
+}
+* body .App .table_list table {
+  position: relative;
+  border: 3px solid ay;
+}
+* body .App .table_list table thead tr th {
+  padding: 10px;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  border: 2px solid rgba(154, 177, 216, 0.484);
+}
+* body .App .table_list table tbody tr td {
+  padding: 10px;
+  border: 2px solid rgba(154, 177, 216, 0.484);
+}
+@media screen and (max-width: 500px) {
+  * body .App {
+    display: flex;
+    justify-content: center;
+    margin: 60px;
+    position: relative;
+  }
+  * body .App .form_tag {
+    width: 250px;
+  }
+  * body .App .table_list {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+  }
+  * body .App .table_list table {
+    position: relative;
+  }
+  * body .App .table_list table thead tr th {
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+  }
+}/*# sourceMappingURL=style.css.map */

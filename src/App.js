@@ -5,16 +5,22 @@ import './static/css/style.scss'
 
 function App() {
   const [studentAllList, setStudentAllList] = useState([])
-  const [studentDetail, setStudentDetail] = useState({})
+  const [studentDetail, setStudentDetail] = useState({
+    rollNo:'',
+    userName:'',
+
+  })
   const handleChange=(e)=>{
+ 
     setStudentDetail({...studentDetail,[e.target.name]:e.target.value})
-  }
+    }
   const getStudentDetail=(e)=>{
     e.preventDefault()
+    if(studentDetail.userName.length>0 &&  studentDetail.rollNo.length>0){
     setStudentAllList([...studentAllList,{...studentDetail}])
     studentDetail.rollNo=""
     studentDetail.userName=""
-    console.log(studentAllList)
+    console.log(studentAllList)}
   }
 
   return (
